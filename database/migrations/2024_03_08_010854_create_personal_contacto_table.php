@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('personal_contacto', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->unsignedBigInteger('id_operadores');
+            $table->foreign('id_operadores')
+                ->references('id')->on('operadores')
+                ->inDelete('set null');
+
+            $table->text('telefono')->nullable();
             $table->text('direccion')->nullable();
-            $table->string('rfc')->nullable();
-            $table->string('correo')->nullable();
-            $table->string('telefono')->unique();
-            $table->text('regimen_fiscal')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('nombre_empresa')->nullable();
-            $table->date('fecha')->nullable();
+            $table->text('correo')->nullable();
+            $table->text('nombre')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('personal_contacto');
     }
 };

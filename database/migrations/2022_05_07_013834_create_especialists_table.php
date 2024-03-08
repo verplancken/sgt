@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('especialists', function (Blueprint $table) {
+        Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellido');
-            $table->integer('edad')->nullable();
-            $table->string('sanguineo')->nullable();
-            $table->string('cedula')->nullable();
-            $table->integer('telefono')->unique();
-            $table->date('fecha_nacimiento')->nullable();
-            $table->string('especialidad')->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->string('correo');
+            $table->string('telefono')->nullable();
+            $table->string('regimen')->nullable();
+            $table->date('fecha')->nullable();
             $table->timestamps();
         });
     }

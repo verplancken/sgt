@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 
     Route::get('proveedores', [App\Http\Controllers\ProveedorController::class, 'index'])->name('index.proveedores');
+    Route::post('proveedores/create', [App\Http\Controllers\ProveedorController::class, 'store'])->name('store.proveedores');
     Route::patch('proveedores/update/{id}', [App\Http\Controllers\ProveedorController::class, 'update'])->name('update.proveedores');
 
     Route::get('equipos', [App\Http\Controllers\EquiposController::class, 'index'])->name('index.equipos');

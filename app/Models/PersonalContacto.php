@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class PersonalContacto extends Model
 {
     use HasFactory;
     public $timestamps = false;
 
-    protected $table = 'clients';
+    protected $table = 'personal_contacto';
 
     protected $fillable = [
-        'nombre',
-        'direccion',
-        'rfc',
-        'correo',
+        'id_operadores',
         'telefono',
-        'regimen_fiscal',
-        'email',
-        'nombre_empresa',
-        'fecha',
+        'direccion',
+        'correo',
+        'nombre',
     ];
 
+    public function Operadores()
+    {
+        return $this->belongsTo(Operador::class, 'id_operadores');
+    }
 }
