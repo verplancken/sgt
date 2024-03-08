@@ -33,6 +33,17 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('permisos', PermisosController::class);
     Route::resource('users', UserController::class);
     Route::resource('clients', ClientController::class);
+
+
+    Route::get('proveedores', [App\Http\Controllers\ProveedorController::class, 'index'])->name('index.proveedores');
+    Route::patch('proveedores/update/{id}', [App\Http\Controllers\ProveedorController::class, 'update'])->name('update.proveedores');
+
+    Route::get('equipos', [App\Http\Controllers\EquiposController::class, 'index'])->name('index.equipos');
+    Route::patch('equipos/update/{id}', [App\Http\Controllers\EquiposController::class, 'update'])->name('update.equipos');
+
+    Route::get('operadores', [App\Http\Controllers\OperadorController::class, 'index'])->name('index.operadores');
+    Route::patch('operadores/update/{id}', [App\Http\Controllers\OperadorController::class, 'update'])->name('update.operadores');
+
 });
 
 //Route Hooks - Do not delete//

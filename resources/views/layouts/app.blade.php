@@ -93,13 +93,13 @@
 
     <!--livewire -->
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         window.livewire.on('closeModal', () => {
             $('#createDataModal').modal('hide');
         });
-    </script>
+    </script> --}}
 
-   <script>
+   {{-- <script>
     $(document).ready(function () {
         $.noConflict();
         var table = $('#table_id').DataTable({
@@ -112,7 +112,7 @@
             }
         });
     });
-    </script>
+    </script> --}}
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
