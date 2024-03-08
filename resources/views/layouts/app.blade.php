@@ -30,7 +30,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.1/css/bootstrap.min.css">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-  @livewireStyles
 </head>
 
 <body style="overflow-x: hidden">
@@ -93,7 +92,6 @@
     @include('layouts.alertas')
 
     <!--livewire -->
-    @livewireScripts
 
     <script type="text/javascript">
         window.livewire.on('closeModal', () => {
